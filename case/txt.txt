@@ -1,0 +1,4 @@
+{
+    li=yan=hui
+    ucai=cn
+}
