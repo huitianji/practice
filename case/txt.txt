@@ -2,3 +2,14 @@
     li=yan=hui
     ucai=cn
 }
+--------------------------
+用手机当作鼠标
+两种模式
+PPT模式，提供上一页，下一页切换，
+鼠标模式提供，鼠标操作
+
+pc用electron
+
+electron+react-Native
+
+
