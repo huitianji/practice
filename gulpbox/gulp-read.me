@@ -127,3 +127,13 @@ gulp.task('jsLint',function(){
         .pipe(jshint())//进行代码检查
         .pipe(jshint.reporter());//输出检查结果
 });
+
+
+-----------------------------【认识yeoman】-------------------------------------
+npm install -g yo
+
+mkdir gulpdemo
+cd gulpdemo
+npm install -g generator-gulp-webapp  // es5->generator-gulp-webapp@0.2.0   //生成器
+yo gulp-webapp gulpdemo
+
