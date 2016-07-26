@@ -33,14 +33,37 @@ gulp.task(),gulp.src(),gulp.dest(),gulp.watch();
 压缩---Virtual file format
 Vinyl
 gulpjs/vinyl
+-------------------------------【gulp-插件介绍】-----------------------------------
+插件介绍：
+    -。- 编译sass:gulp-sass
+    -。-编译less:gulp-less
+    -。-合并文件 ：gulp-concat
+    -。-压缩js文件：gulp-uglify
+    -。-重命名js文件：gulp-rename
+    -。-优化图像大小：gulp-imagemin
+    -。-压缩css 文件：gulp-minify-css
+    -。-创建本地服务器：gulp-connect
+    -。-实时预览：gulp-connect
 
 
+使用插件
+    1.npm install xx --save-dev
+    2.在gulpfile.js顶部插入此插件
+    3.在创建任务的时候使用此插件
 
+**-**
+gulp-load-plugins这个插件能自动帮你加载package.json文件里面的gulp插件。
 
+然后我们可以在gulpfile.js中使用gulp-load-plugins来帮我们加载插件：
 
+var gulp = require("gulp");
+//加载gulp-load-plugins插件，并马上运行它
+var $ = require('gulp-load-plugins')();
 
+然后我们要使用gulp-rename和gulp-ruby-sass这两个插件的时候，
+就可以使用$.concat 和$.connect来代替了，有就是原始插件名去掉gulp-前缀，之后在转换为驼峰命名
 
-
+** 安装   npm install gulp-load-plugins --save-dev
 
 
 
