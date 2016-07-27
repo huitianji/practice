@@ -48,7 +48,7 @@ gulp.task('default',['copy-js'],function(){
                 */
                 fs.readFile(event.path,function(err,data){
                     fs.writeFile(path.join('dist',
-                        event.path.slice(path.resolve('apps').length)
+                        event.path.slice(path.resolve('app').length)
                     ))
                 });
                 break;

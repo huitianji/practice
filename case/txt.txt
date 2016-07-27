@@ -11,5 +11,75 @@ PPT模式，提供上一页，下一页切换，
 pc用electron
 
 electron+react-Native
+---------------------------------
+空对象 null
+空的对象  {} 里面没有内容
+
+------------【数据类型】-----------------------
+var a = 250 //十进制整型
+alert(a);
+
+八进制数值字面量 ，（以8为基数），前导必须是0，八进制序列（0-7）
+var box = 070;  //八进制  ，56  都是按照十进制输出
+
+十六进制字面量前面两位必须是0x,后面是（0-9及A-F）
+var box = 0xA //十六进制，10
+
+var box = 4.12e3   => 4.12 * 1000
+
+判断的时候不要用浮点数做精确的判断
+
+Number.MIN_VALUE  最小值。
+Number.MAX_VALUE  最大值
+Number.POSITIVE_INFINITY  正无穷大
+
+----[转义序列]---
+
+\n  === 换行
+\t  === 制表  tab键
+\b  === 空格
+\r  === 回车
+\f  === 进制
+\\  === 斜杠
+\'
+\"
+
+----------------
+var box = true;
+alert(box)//Boolean  true
+alert(box.toString());//  打印出来的是单引号。或者是双引号的'true'
+
+toString不能转型 null 和undefined 类型
+得用  String(null);
+
+var box = new Object(2)
+var age = 100;
+alert(box+age) //102
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
