@@ -1,0 +1,117 @@
+【命令】
+rm txt.txt
+rm -rf  文件夹
+{
+    rm -rf 目录名字
+    -r 就是向下递归，不管有多少级目录，一并删除
+    -f 就是直接强行删除，不作任何提示的意思
+}
+【安装模块】
+npm install webpack -g
+npm install webpack --save-dev
+
+npm install css-loader style-loader --save-dev
+
+
+
+一：什么是webpack
+webpack是一个模块打包器。任何静态资源都可以视作模块，然后模块之间也可以相互依赖，通过webpack对模块
+进行处理后，可以导报成我们想要的静态资源。
+二：webpack的特点
+    -。支持commonjs和amd模块，意思也就是我们基本可以无痛迁移旧项目。
+    -。支持模块加载器和插件机制，可对模块灵活定制。特别是我最爱的babel-loader，有效的支持es6
+    -。可以通过配置，打包成多个文件。有效利用浏览器的缓存功能提升性能。
+    -。将样式文件和图片等静态资源也可视为模块进行打包。配合loader加载器，可以支持sass,less
+    等css预处理器。
+    -。内置有 source map ,即使打包在一起依旧方便调试
+三：安装webpack
+    ** npm install webpack -g
+    -。webpack   -w 提供watch方法，实时进行打包更新
+    -。webpack   -p 对打包后的文件进行压缩
+    -。webpack   -d 提供sourcemap，方便调试
+    -。webpack   --config 以某个config作为打包
+    -。webpack   --help 更多命令
+
+    【本地安装】
+    npm install webpack --save-dev
+
+    【体验】
+    编译entry.js并打包到  bundle.js
+    index.html
+    entry.js
+
+    webpack ./entry.js bundle.js
+
+    【】【】
+四：模块依赖
+    -。webpack会分享入口文件，解析包含依赖关系的各个文件
+    -。这些文件（模块）都打包到bundle.js文件中
+    -。webpack会给每个模块分配一个唯一的id 并通过这个id索引和访问模块
+    -。页面启动时先执行entry.js代码，其它的模块会在require时依赖加载
+五：loader 加载器
+    -。webpack 本身只能处理javascript模块，如果要处理其它类型的文件，
+    就需要使用’loader'进行转换。
+    -。loader可以理解为是模块和资源的转换器，可以转换任何类型的模块
+    -。loader可以通过管道方式连接调用，每个loader可以把资源转换成任意格式并传递给
+    下一个loader，但是最后一个loader必须返回javascript
+    -。loader可以接受参数，以此来传递配置项给loader
+    -。loader 可以通过npm 安装
+    -。loader可以通过问卷扩展名（或正则表达式）=绑定不同的加载器
+六：加载css文件
+    安装loader
+    **  npm install css-loader style-loader --save-dev
+    -。首页将style.css也看成是一个模块
+    -。css-loader来读取它
+    -。style-loader把它插入到页面中
+
+    //
+    require('!style!css!./style.css');//css=>css-loader
+    //
+**七：配置文件
+    -。webpack在执行的时候可以通过指定的配置文件
+    -。默认情况下会执行当前目录中的 webpack.config.js
+    -。配置文件是一个node.js模块，返回一个json格式的配置信息对象
+    -。添加配置文件
+    module.exports = {
+        entry:'./entry.js',//定义了打包的入口文件，每有一个键值对，就是一个入口文件
+        output:{//配置打包结果
+            path:__dirname,//定义了输出的文件夹
+            filename:'bundle.js'//定义了打包结果文件的名称
+        },
+        module:{//定义模块的加载逻辑
+            loaders:[//定义了一系列的加载器
+                {test:/\.css$/,loader:"style!css"}//当需要加载的文件匹配‘test'的正则时，就会调用后面的’loader'对文件进行加载
+            ]
+        }
+    }
+
+    然后只要执行webpack  --progress --colors即可
+八：插件
+插件的使用一般是在webpack的配置信息【plugins】选项中指定 我们可以向生成的打包文件头部插入一些信息
+var webpack = require('webpack');
+plugins:[
+    new webpack.Banner
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
