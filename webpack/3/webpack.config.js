@@ -7,7 +7,8 @@ module.exports = {
     },
     module:{
         loaders:[
-            {test:'/\.css$/',loader:'style!css'}
+            {test:/\.css$/,loader:'style!css'},
+            {test:/\.(png|jpg)$/,loader:'url?limit=40000'}//小于4k内联，大于4K外链
         ]
     }
     ,
