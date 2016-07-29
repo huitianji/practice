@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 module.exports = {
     entry:"./entry.js",
     output:{
@@ -9,5 +10,10 @@ module.exports = {
             {test:'/\.css$/',loader:'style!css'}
         ]
     }
+    ,
+
+    plugins:[//前缀
+        new webpack.BannerPlugin('//jht')
+    ]
 
 }
