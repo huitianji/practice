@@ -15,6 +15,11 @@ module.exports = {
 
     plugins:[//前缀
         new webpack.BannerPlugin('//jht')
-    ]
+    ],
+    resolve:{
+        alias:{//别名...省略较长的路径
+            jquery:'./lib/jquery/jquery.js'
+        }
+    }
 
 }

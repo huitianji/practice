@@ -1,0 +1,1 @@
+document.write("lib/jquery/cs.js");

@@ -9,4 +9,6 @@ require("jquery");
 */
 //如果要把jquery暴露出来
 require('expose?$!jquery');
+//
+require("./people.js");
 
