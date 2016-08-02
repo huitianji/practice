@@ -57,6 +57,23 @@ var age = 100;
 alert(box+age) //102
 
 
+--------------------------
+【1】
+var box = 100;
+var age = ++box;
+alert(age) -==> 101
+【2】
+var box = 100;
+var age = box++;
+alert(age) ==>100
+alert(box)  ==> 101
+
+
+--
+var box = '10'
++box
+typeOf box ==>Number
++有自动转型的功能
 
 
 

@@ -45,10 +45,13 @@ gulpjs/vinyl
     -。-创建本地服务器：gulp-connect
     -。-实时预览：gulp-connect
 
+    -。-合成雪碧图：gulp-sprite
 
     --。 html文件压缩:gulp-minify-html     用法：minifyHtml()
 
     --。 代码检查  gulp-jshint
+
+
 
 
 
@@ -128,6 +131,23 @@ gulp.task('jsLint',function(){
         .pipe(jshint.reporter());//输出检查结果
 });
 
+
+****-合成雪碧图-****
+*** npm install gulp-sprite --save-dev
+
+
+var gulp = require('gulp');
+var sprite = require('gulp-sprite');
+
+gulp.task('sprites', function () {
+    gulp.src('./src/img/*.png')
+      .pipe(sprite('sprites.png', {
+        imagePath: 'dist/img',
+        cssPath: './src/scss/utils/',
+        preprocessor: 'scss'
+      }))
+      .pipe(gulp.dest('./dist/img/'));
+});
 
 -----------------------------【认识yeoman】-------------------------------------
 npm install -g yo
