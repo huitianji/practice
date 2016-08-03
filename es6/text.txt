@@ -1,0 +1,26 @@
+------------------【babel安装】---------------------
+npm install babel-cli -g
+npm install --save-dev babel-preset-es2015      //把es5-》es6
+
+.babelrc
+{
+    'presets':['es2015'],
+    'plugins':[]
+}
+
+touch .babelrc  //创建文件
+babel --help
+//命令
+babel 4.arrow.js -o 4.es5.arrow.js   //es6转换成es5 ***
+------------------------------------------------------
+
+npm install babel@5.8.2 -g
+
+babel  执行转换
+babel -o 指定输出的文件
+babel -w 启动监控，发现文件改动后立刻转成es5
+babel -d 指定编译的目录
+babel -s sourcemap
+babel --help
+
+babel arrow.js -o arr.es5.js

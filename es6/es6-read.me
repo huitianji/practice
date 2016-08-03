@@ -1,0 +1,75 @@
+babel是个插件。可以把es6转换成es5
+//
+【安装】
+npm install babel-cli -g
+--------------【babel安装】------------------
+npm install -g babel-cli
+npm install --save-dev babel-preset-es2015
+
+.babelrc
+{
+    'presets':['es2015'],
+    'plugins':[]
+}
+
+touch .babelrc  //创建文件
+babel --help
+//命令
+babel 4.arrow.js -o 4.es5.arrow.js   //es6转换成es5 ***
+
+---【常用的命令】---
+    babel --help
+    babel -o 输出到一个文件    ’babel arr.js -o arr.es5.js‘
+    babel -w 提供watch方法     ’babel -w arr.js -o arr.es5.js‘
+    babel -s 生成sourcemap     ’babel -s -w arr.js -o arr.es5.js‘
+    babel -d 指定要编译的目录  ’babel -d es5/ es6/‘
+
+一：【模块】--------------------------
+
+    es6在语言规格的层面上，实现了模块功能
+    -。export命令用于规定模块的对外接口
+    -。import命令用于输入其他模块提供的功能
+    -。一个模块就是一个独立的文件。该文件内部的所有变量，外部无法获取
+    -。如果你希望外部能够读取模块内部的某个变量，就必须使用export关键字输出该变量
+二：【export】----：
+
+    -。导出变量
+    -。导出变量为一个对象
+    -。函数或类（class)
+    三：【import】
+    -。其他js文件就可以通过import命令加载这个模块
+    -。import命令接受一个对象，里面指定要从其他模块导入的变量名
+    -。模块整体加载
+        import * as util from './util';
+    -。export default 命令，为模块指定默认输出
+        export default function(){
+            console.log(’foo‘）；
+        }
+        import customName from './export-default';
+    -。export default 对应的import语句不需要使用大括号，不使用export default
+        对应的import语句需要使用大括号
+    -。一个模块只能有一个默认输出
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
