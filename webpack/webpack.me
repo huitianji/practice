@@ -173,6 +173,11 @@ gulp.task('webpack',function(callback){
     );
 });
 
+
+gulp.task('default',function(){
+    gulp.watch('./**',['webpack']);
+});
+
 十六：【webpack-dev-server】
 npm install webpack-dev-server -g
 

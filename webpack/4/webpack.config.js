@@ -28,7 +28,7 @@ module.exports = {
     ,
 
     plugins:[//前缀
-        new webpack.BannerPlugin('//jht'),
+        new webpack.BannerPlugin('//jht--'),
         new webpack.optimize.CommonsChunkPlugin('common.js')
     ],
     resolve:{
