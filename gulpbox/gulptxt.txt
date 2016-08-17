@@ -82,6 +82,8 @@ api --> http://www.gulpjs.com.cn/docs/api/
 
     执行gulp任务
     gulp hello
+    gulp后面跟着的是任务的名称，不输入任务名称的话会默认找default任务，找不到会报错
+
    三。执行其他任务
    可以使用
    gulp <task> <othertask>
@@ -150,7 +152,12 @@ api --> http://www.gulpjs.com.cn/docs/api/
     语法：
     gulp.task方法用来定义任务
     gulp.task(name[,deps],fn);
-
+    {
+        name为任务名
+        deps 是当前定义的任务需要依赖的其他任务，为一个数组。当前定义的任务会在所有依赖的任务
+        执行完毕后才开始执行。如果没有依赖，则可以省略这个参数
+        fn 为任务函数，我们把任务要执行的代码都写在里面。该参数也是可选的
+    }
 
     gulp.watch()
     监控文件的变化
@@ -166,6 +173,34 @@ api --> http://www.gulpjs.com.cn/docs/api/
     gulp.task('default',['1','2],function(){//依赖 1  2  3
 
             })
+
+    --[gulp.watch()还有另外一种使用方法]-----------------------
+    gulp.watch(glob[,opts,cb]);
+    glob和opts参数与第一种用法相同
+    "cb"参数为一个函数。每当监视的文件发生变化时，就会调用这个函数，并且会给它传入一个对象，
+    该对象包含了文件变化的一些信息，type属性为变化的类型，可以是 added ,changeed,deleted;
+    path属性为发生变化的文件的路径
+
+    gulp.watch('js/**/*.js',function(event){
+        console.log(event.type);//变化类型  added为新增，deleted为删除，changed为改变
+        console.log(event.path);//变化的文件的路径
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
