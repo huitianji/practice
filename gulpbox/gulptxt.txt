@@ -186,9 +186,26 @@ api --> http://www.gulpjs.com.cn/docs/api/
         console.log(event.path);//变化的文件的路径
     });
 
+十三：复制单个文件：
+    var gulp = require("gulp");
+    gulp.task('copy-html',function(){
+        return gulp.src('app/index.html')
+                    .pipe(
+                        gulp.dest('dist')
+                    );
+    });
 
 
+十四：复制多个文件:
+    *.{jpg,png}
 
+     多个glob,这样我们就可以用一个数组，数组里的每个项目表示的就是用来匹配文件的glob.
+     ['app/css/*.css','app/js/*.js']
+
+
+    【排除特定的文件】
+        在glob的前面，再加上一个！ 号，表示这是要排除掉的文件
+        【'app/cds/*.css','app/js/*.js','!app/js/*.tmp.js'】
 
 
 
