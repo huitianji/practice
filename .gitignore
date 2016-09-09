@@ -4,3 +4,9 @@
 *.tmp
 *.err
 node_modules
+
+
+.idea
+node_modules
+dist/
+.tmp
